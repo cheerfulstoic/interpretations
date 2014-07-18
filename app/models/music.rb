@@ -1,4 +1,4 @@
-class Music < ActiveRecord::Base
+class Music
   include Neo4j::ActiveNode
 
   property :title
