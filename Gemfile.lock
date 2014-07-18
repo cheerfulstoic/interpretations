@@ -1,4 +1,15 @@
 GIT
+  remote: git://github.com/andreasronge/neo4j.git
+  revision: 3155e980451d678ec03fc01a92ea0492cc45c94f
+  specs:
+    neo4j (3.0.0.alpha.8)
+      active_attr (~> 0.8)
+      activemodel (~> 4)
+      neo4j-core (= 3.0.0.alpha.18)
+      orm_adapter (~> 0.5.0)
+      railties (~> 4)
+
+GIT
   remote: git://github.com/kch/rack-timeout.git
   revision: 83ca9f5141c1fdcb626820b1601c406e3a3a560a
   ref: 83ca9f5141c1fdcb626820b1601c406e3a3a560a
@@ -21,6 +32,9 @@ GEM
       activesupport (= 4.1.4)
       builder (~> 3.1)
       erubis (~> 2.7.0)
+    active_attr (0.8.4)
+      activemodel (>= 3.0.2, < 4.2)
+      activesupport (>= 3.0.2, < 4.2)
     activemodel (4.1.4)
       activesupport (= 4.1.4)
       builder (~> 3.1)
@@ -94,6 +108,9 @@ GEM
       dotenv (~> 0.11.1)
       thor (~> 0.19.1)
     hike (1.2.3)
+    httparty (0.13.1)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
     i18n (0.6.11)
     jbuilder (2.1.1)
       activesupport (>= 3.0.0, < 5)
@@ -116,13 +133,20 @@ GEM
     mini_portile (0.6.0)
     minitest (5.4.0)
     multi_json (1.10.1)
+    multi_xml (0.5.5)
     neat (1.5.1)
       bourbon (>= 3.1)
       sass (~> 3.2.19)
+    neo4j-core (3.0.0.alpha.18)
+      httparty
+      json
+      os
+      zip
     newrelic_rpm (3.9.0.229)
     nokogiri (1.6.2.1)
       mini_portile (= 0.6.0)
-    pg (0.17.1)
+    orm_adapter (0.5.0)
+    os (0.9.6)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -244,6 +268,7 @@ GEM
     websocket-driver (0.3.4)
     xpath (2.0.0)
       nokogiri (~> 1.3)
+    zip (2.0.2)
 
 PLATFORMS
   ruby
@@ -269,8 +294,8 @@ DEPENDENCIES
   jumpup-heroku (= 0.0.5)
   letter_opener (= 1.2.0)
   neat (= 1.5.1)
+  neo4j!
   newrelic_rpm (= 3.9.0.229)
-  pg (= 0.17.1)
   poltergeist (= 1.5.1)
   pry-rails (= 0.3.2)
   puma (= 2.8.2)
