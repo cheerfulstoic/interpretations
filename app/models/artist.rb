@@ -1,2 +1,14 @@
 class Artist < ActiveRecord::Base
+  include Neo4j::ActiveNode
+
+  property :name
+  property :link
+  property :photo
+
+  validates :name, :link, :photo, presence: true
+
+  index :name
+
+  has_n(:musics).to(Music)
+
 end
