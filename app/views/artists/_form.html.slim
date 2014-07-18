@@ -1,0 +1,10 @@
+= simple_form_for(@artist) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :link
+    = f.input :photo
+
+  .form-actions
+    = f.button :submit

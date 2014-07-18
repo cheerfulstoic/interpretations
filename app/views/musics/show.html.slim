@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @music.name
+p
+  strong Link:
+  = @music.link
+p
+  strong Artist:
+  = @music.artist
+
+= link_to 'Edit', edit_music_path(@music)
+'|
+= link_to 'Back', musics_path
