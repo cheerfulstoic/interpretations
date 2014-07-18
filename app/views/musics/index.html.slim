@@ -3,7 +3,7 @@ h1 Listing musics
 table
   thead
     tr
-      th Name
+      th Title
       th Link
       th Artist
       th
@@ -13,7 +13,7 @@ table
   tbody
     - @musics.each do |music|
       tr
-        td = music.name
+        td = music.title
         td = music.link
         td = music.artist
         td = link_to 'Show', music
