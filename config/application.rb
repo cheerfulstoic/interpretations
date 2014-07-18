@@ -1,13 +1,18 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-require "active_model/railtie"
-require "active_record/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
-# require "rails/test_unit/railtie"
+require "rails"
+
+%w(
+  neo4j
+  action_controller
+  action_mailer
+  sprockets
+).each do |framework|
+  begin
+    require "#{framework}/railtie"
+  rescue LoadError
+  end
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -15,6 +20,11 @@ Bundler.require(*Rails.groups)
 
 module Interpretations
   class Application < Rails::Application
+
+    # Configure Neo4j session type
+    config.neo4j.session_type = :server_db
+    config.neo4j.session_path = ENV['GRAPHENEDB_URL'] || 'http://localhost:7474'
+
     # Do not generate specs for views and requests. Also, do not generate assets.
     config.generators do |g|
       g.helper false
@@ -22,6 +32,7 @@ module Interpretations
       g.assets false
       g.integration_tool false
     end
+
     config.app_generators do |g|
       g.test_framework :rspec
     end
