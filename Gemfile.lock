@@ -147,6 +147,7 @@ GEM
       mini_portile (= 0.6.0)
     orm_adapter (0.5.0)
     os (0.9.6)
+    pg (0.17.1)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -296,6 +297,7 @@ DEPENDENCIES
   neat (= 1.5.1)
   neo4j!
   newrelic_rpm (= 3.9.0.229)
+  pg (= 0.17.1)
   poltergeist (= 1.5.1)
   pry-rails (= 0.3.2)
   puma (= 2.8.2)
