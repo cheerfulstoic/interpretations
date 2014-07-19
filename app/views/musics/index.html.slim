@@ -15,11 +15,7 @@ table
       tr
         td = music.title
         td = music.link
-        td = music.artist
-        td = link_to 'Show', music
-        td = link_to 'Edit', edit_music_path(music)
-        td = link_to 'Destroy', music, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Music', new_music_path
+        td = music.artist.name
+        td = link_to 'Show', artist_music_path(music.artist, music)
+        td = link_to 'Edit', edit_artist_music_path(music.artist, music)
+        td = link_to 'Destroy', artist_music_path(music.artist, music), data: {:confirm => 'Are you sure?'}, :method => :delete

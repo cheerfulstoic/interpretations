@@ -9,6 +9,11 @@ p
 p
   strong Photo:
   = @artist.photo
+p
+  string Musics:
+  - @artist.musics.each do |music|
+    = music.title
+  = link_to 'New music', new_artist_music_path(@artist)
 
 = link_to 'Edit', edit_artist_path(@artist)
 '|
