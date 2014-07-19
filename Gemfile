@@ -36,19 +36,12 @@ group :development do
   gem 'better_errors',        '1.1.0'
   gem 'binding_of_caller',    '0.7.2'
   gem 'letter_opener',        '1.2.0'
-  gem 'bullet',               '4.11.3'
   gem 'quiet_assets',         '1.0.3'
 end
 
 group :test do
-  gem 'shoulda-matchers',     '2.6.1', require: false
   gem 'simplecov',            '0.8.2', require: false
   gem 'email_spec',           '1.6.0'
-  gem 'capybara',             '2.4.1'
-  gem 'poltergeist',          '1.5.1'
-  gem 'vcr',                  '2.9.2'
-  gem 'webmock',              '1.18.0'
-  gem 'database_cleaner',     '1.3.0'
 end
 
 group :development, :test do
