@@ -1,20 +1,22 @@
-p#notice = notice
-
 p
-  strong Name:
+  strong= 'Name: '
   = @artist.name
 p
-  strong Link:
+  strong= 'Link: '
   = @artist.link
 p
-  strong Photo:
+  strong= 'Photo: '
   = image_tag @artist.photo, width: 100
 p
-  string Musics:
-  - @artist.musics.each do |music|
-    = music.title
-  = link_to 'New music', new_artist_music_path(@artist)
+  strong= 'Musics: '
+  = 'No music found for this artist' if @artist.musics.empty?
+  ul
+    - @artist.musics.each do |music|
+      li
+        = link_to music.title, artist_music_path(@artist, music)
 
+= link_to 'New music', new_artist_music_path(@artist)
+= ' | '
 = link_to 'Edit', edit_artist_path(@artist)
-'|
+= ' | '
 = link_to 'Back', artists_path
