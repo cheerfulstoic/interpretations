@@ -1,5 +1,6 @@
 class MusicsController < ApplicationController
   before_action :set_music, only: [:show, :edit, :update, :destroy]
+  before_action :set_artist, only: [:new, :create, :destroy, :update]
 
   # GET /musics
   # GET /musics.json
@@ -28,6 +29,8 @@ class MusicsController < ApplicationController
 
     respond_to do |format|
       if @music.save
+        @artist.musics.create(@music, created: Time.zone.now.to_i)
+
         format.html { redirect_to @music, notice: 'Music was successfully created.' }
         format.json { render :show, status: :created, location: @music }
       else
@@ -67,8 +70,12 @@ class MusicsController < ApplicationController
       @music = Music.find(params[:id])
     end
 
+    def set_artist
+      @artist = Artist.find(params[:artist_id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def music_params
-      params.require(:music).permit(:name, :link, :artist_id)
+      params.require(:music).permit(:title, :link)
     end
 end
