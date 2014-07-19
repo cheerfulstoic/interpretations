@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :musics
+  resources :musics, only: [:index]
 
   resources :artists do
-    resources :musics
+    resources :musics, except: [:index]
   end
 
   root 'artists#index'
