@@ -42,6 +42,7 @@ class ArtistsController < ApplicationController
   end
 
   def destroy
+    @artist.musics.each { |music| music.destroy }
     @artist.destroy
     respond_to do |format|
       format.html { redirect_to artists_url, notice: 'Artist was successfully destroyed.' }
