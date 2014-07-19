@@ -5,7 +5,7 @@ p
   = @music.title
 p
   strong Link:
-  = @music.link
+  = link_to @music.link, @music.link
 p
   strong Artist:
   = link_to @music.artist.name, @music.artist
