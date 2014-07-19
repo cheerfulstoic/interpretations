@@ -1,18 +1,10 @@
 require File.expand_path('../boot', __FILE__)
 
-require "rails"
-
-%w(
-  neo4j
-  action_controller
-  action_mailer
-  sprockets
-).each do |framework|
-  begin
-    require "#{framework}/railtie"
-  rescue LoadError
-  end
-end
+require 'rails'
+require 'neo4j/railtie'
+require 'action_controller/railtie'
+require 'action_mailer/railtie'
+require 'sprockets/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -34,6 +26,7 @@ module Interpretations
     end
 
     config.app_generators do |g|
+      g.orm :neo4j
       g.test_framework :rspec
     end
 
