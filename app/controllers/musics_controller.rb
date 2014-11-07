@@ -21,7 +21,7 @@ class MusicsController < ApplicationController
 
     respond_to do |format|
       if @music.save
-        @artist.musics.create(@music)
+        @artist.musics.create(@music, {})
 
         format.html { redirect_to [@music.artist, @music], notice: 'Music was successfully created.' }
         format.json { render :show, status: :created, location: [@music.artist, @music] }

@@ -8,6 +8,6 @@ class Music
 
   index :title
 
-  has_one(:artist).from(Artist, :musics)
+  has_one :in, :artist, type: :wrote
 
 end

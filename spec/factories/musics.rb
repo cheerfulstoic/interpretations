@@ -4,6 +4,5 @@ FactoryGirl.define do
   factory :music do
     title "MyString"
     link "MyString"
-    artist nil
   end
 end

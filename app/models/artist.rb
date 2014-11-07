@@ -9,6 +9,6 @@ class Artist
 
   index :name
 
-  has_n(:musics).to(Music)
+  has_many :out, :musics, origin: :artist
 
 end

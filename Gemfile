@@ -18,7 +18,7 @@ gem 'bourbon',                '3.2.3'
 gem 'neat',                   '1.5.1'
 gem 'bitters',                '0.10.0'
 gem 'refills',                '0.0.2'
-gem 'neo4j',                  github: 'andreasronge/neo4j'
+gem 'neo4j',                  '~> 3.0.0'
 
 group :production, :staging do
   gem 'rails_12factor',       '0.0.2'
